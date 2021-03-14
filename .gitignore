@@ -1,0 +1,14 @@
+# folders
+.vscode/
+.ipynb_checkpoints/
+
+# file types
+*.pyc
+*.icloud
+
+# hidden files
+##.gitignore
+.DS_Store
+.Rhistory
+
+# other files

@@ -1,0 +1,17 @@
+Sample_ID,Sample_Name,Condition
+NB1,C1,Control
+NB2,C2,Control
+NB3,C3,Control
+NB4,C4,Control
+NB5,IN2,Indium
+NB6,IN3,Indium
+NB7,IN4,Indium
+NB8,IN5,Indium
+NB9,AL2,Aluminium
+NB10,AL3,Aluminium
+NB11,AL4,Aluminium
+NB12,AL5,Aluminium
+NB13,ALIN2,Aluminium_Indium
+NB14,ALIN3,Aluminium_Indium
+NB15,ALIN4,Aluminium_Indium
+NB16,ALIN5,Aluminium_Indium

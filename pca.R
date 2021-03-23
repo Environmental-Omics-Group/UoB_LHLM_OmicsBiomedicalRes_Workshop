@@ -12,14 +12,6 @@ sample_sheet_file <- 'sample_sheet.csv'
 sample_sheet <- read.table(sample_sheet_file, header = T, sep = ',', row.names = 1)
 
 # take a subset if needed
-# =====================================
-# QUESTION 1: Please try to used different condition subsets to plot your PCA:
-#   a. Control, Indium, and Aluminium_Indium 
-#   b. Control, Aluminium, and Aluminium_Indium 
-#   c. Control, Indium, and Aluminium
-#   d. Indium, Aluminium, and Aluminium_Indium
-# How does the PCA plot change?
-# =====================================
 sample_sheet <- sample_sheet[sample_sheet$Condition %in% c('Control','Indium','Aluminium_Indium'),]
 
 # check the loaded metadata
@@ -30,13 +22,6 @@ dim(sample_sheet)
 # -----------------------------------------------------
 # 2. load read counts
 # -----------------------------------------------------
-# =====================================
-# QUESTION 2: Please try to used different input matrices to plot your PCA:
-#   a. raw counts 
-#   b. normalised counts
-#   c. VST counts
-# How does the PCA plot change?
-# =====================================
 read_counts_file <- 'gene_norm_counts.csv'
 read_counts <- read.table(read_counts_file, header = T, sep = ',',  row.names = 1, check.names = F)
 
@@ -94,32 +79,6 @@ pca.plot <- function(read.counts, classes,
 # 5. Plot PCA on the read counts
 # -----------------------------------------------------
 groups <- sample_sheet$Condition
-
-# =====================================
-# QUESTION 3: Please try to used different number of top genes (with the largest variants) to plot your PCA:
-#   a. a small number, e.g., 100
-#   b. half of the genes
-#   c. all the genes
-# How does the PCA plot change?
-# =====================================
 p <- pca.plot(read_counts, groups, comps = c(1,2), ntop = 2000)
 p
-# ggplotly(p)
-
-
-library(ggplot2)
-library(stringr)
-library(dplyr)
-
-
-rna_norm_numeric <- select(rna_norm_counts, -X)
-
-normrna_pca <- prcomp(t(rna_norm_numeric), center = TRUE, scale = TRUE)
-pca_summary <- summary(normrna_pca)
-print(pca_summary)
-
-pca_df <- data.frame(normrna_pca$x, cond = sample_sheet[row.names(normrna_pca$x),]$REF) #, make = stringr::word(rownames(rna_norm_numeric), 1))
-
-ggplot(pca_df, aes(x = PC1, y = PC2, col = cond)) +
-  geom_point(size = 3) +
-  labs(x = "PC1", y= "PC2", title = "PCA for normalised RNA data" ) + theme(legend.position = "bottom")
+ggplotly(p)

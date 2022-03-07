@@ -79,6 +79,7 @@ pca.plot <- function(read.counts, classes,
 # 5. Plot PCA on the read counts
 # -----------------------------------------------------
 groups <- sample_sheet$Condition
+
 p <- pca.plot(read_counts, groups, comps = c(1,2), ntop = 2000)
 p
-ggplotly(p)
+# ggplotly(p)

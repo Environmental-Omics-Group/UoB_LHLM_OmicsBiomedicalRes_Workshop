@@ -2,7 +2,7 @@
 [![R 4.0](https://img.shields.io/badge/R-4.0-red.svg)](https://cloud.r-project.org)
 
 
-# Omics for Biomedical Research Workshop
+# LH/LM Omics for Biomedical Research Workshop
 
 This repo contains the demo scripts and data for LH/LM Omics for Biomedical Research Workshop at the University of Birmingham.
 
@@ -12,6 +12,6 @@ The contents in this repo is distributed under the GNU General Public License v3
 ## Installation
 
 ```bash
-git clone https://github.com/Environmental-Omics-Group/Omics_Biomedical_Research_Workshop.git
+git clone https://github.com/Environmental-Omics-Group/UoB_LHLM_OmicsBiomedicalRes_Workshop.git
 ```
 
